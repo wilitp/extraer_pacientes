@@ -1,10 +1,20 @@
-import PyPDF2
+from tika import parser
+from utils import findAccidentId, findId, findLocation, findName
 
-fullText = ""
+# Nombre de paciente - número de siniestro(not available) - federación patronal(bool) - dni / cuil - localidad
 
-with open("../assets/test.pdf", "rb") as fileObj:
-    reader = PyPDF2.PdfFileReader(fileObj)
-    numPages = reader.getNumPages()
-    for x in range(numPages - 1):
-        pageObj = reader.getPage(x)
-        print(pageObj.extractText())
+raw = parser.from_file("../assets/test.pdf")["content"]
+
+# Número de siniestro
+accident_id = findAccidentId(raw)
+
+# Nombre
+patient_name = findName(raw)
+
+# Dni o cuil
+patient_id = findId(raw)
+
+# Localidad
+patient_location = ""
+
+print(patient_id)

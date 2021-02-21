@@ -1,0 +1,12 @@
+{
+  "name": "pdf-to-spreadsheet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd src && python3 main.py"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

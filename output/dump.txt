@@ -1,0 +1,99 @@
+
+> pdf-to-spreadsheet@1.0.0 start
+> cd src && python3 main.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARTR80004_PCHESINI
+
+
+Aseguradora de Riesgos del Trabajo
+FEDERACION PATRONAL
+
+SEGUROS S.A.
+
+INFORME DE ACCIDENTE DE TRABAJO O 
+ENFERMEDAD PROFESIONAL
+
+CORNEL Y ASOCIADOS SRL 30650156109 197416
+
+DENUNCIA
+ EMPLEADOR
+
+Nombre de la Empresa: CUIT: Contrato N° CIIU
+
+AVDA SANTA FE N* 2517 P 1 DTO 58 CAPITAL FEDERAL CAPITALDomicilio: Localidad: Provincia
+
+1425 01147975797CP.: Tel. Fax E-mail
+
+Nombre del Establecimiento de ocurrencia del accidente o detección de enfermedad profeseional: 
+
+Código Establecimiento: CIIU
+
+Empresa subcontratada: SI NO CUIT ocurrencia o detección: 
+
+Domicilio: Localidad: Provincia
+
+Pcia. de ocurrencia o detección: 
+
+PESSINA FERNANDO GABRIEL 20280833070
+
+ DATOS DEL TRABAJADOR
+
+Apellido y Nombre: Tipo y N° de Doc.
+
+20280833070 1562037895  CUIL: Nacionalidad: Telefono
+
+09-06-1980Fecha de Nacimiento:
+
+CORONEL PRINGLES  1912  Domicilio:
+
+Localidad: BUENOS AIRES
+
+M F Sexo: X
+
+RAMOS MEJIA Provincia: 0CP.: 
+
+Soltero/a Casado/a  3478 995
