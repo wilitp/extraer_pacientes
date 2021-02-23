@@ -1,0 +1,17 @@
+.vscode
+
+.vim
+
+assets/
+
+output/
+
+**/*.spec
+
+**/venv
+
+**/__pycache__/*
+
+**/dist/*
+
+**/build/*
