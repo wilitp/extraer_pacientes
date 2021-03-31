@@ -7,6 +7,9 @@ def get_dict(path: str):
     if (not exists(path)) and (not isfile(path)):
         return None
     raw = parser.from_file(path)["content"]
+    if raw == None:
+        print("Unvalid file under path: ", path)
+        return
 
     # Número de siniestro
     accident_id = find_accident_id(raw)

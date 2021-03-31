@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd src && python3 main.py"
+    "start": "cd src && python3 main.py",
+    "build": "pytinstaller ./src/main.py --onefile --name pacientes_marina "
   },
   "keywords": [],
   "author": "",

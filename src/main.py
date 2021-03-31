@@ -1,17 +1,21 @@
 from getDict import get_dict
 from pathlib import Path
 import subprocess
-from os import listdir
+from os import listdir, mkdir, renames
 from datetime import date, timedelta
 import pandas as pd
 from tkinter import filedialog, Tk, Button, messagebox, Label, END, BOTTOM
 
 path_to_dir = ""
 output_file = ""
-
+invalid_files_dir_basename = "Archivos-invalidos"
 current_selection_prefix = "Selección.: "
+
+
 def get_label_widget(initial):
-    return Label(root,text=initial,height=1, width=60)
+    return Label(root, text=initial, height=1, width=60)
+
+
 def set_input_dir():
     global path_to_dir
     path_to_dir = filedialog.askdirectory(initialdir="/")
@@ -20,6 +24,7 @@ def set_input_dir():
         select_folder_btn["text"] = "Cambiar carpeta fuente"
     else:
         select_folder_btn["text"] = "Seleccionar carpeta fuente"
+
 
 def set_output_file():
     global output_file
@@ -39,12 +44,15 @@ def continue_handler():
 
     patient_dicts = []
 
+    invalid_files_dir_path = (path_to_dir + "/" + invalid_files_dir_basename)
+
     for path in paths:
         actual_path = path_to_dir + "/" + path
         my_dict = get_dict(actual_path)
         if my_dict != None:
             patient_dicts.append(my_dict)
-        pass
+        else:
+            renames(actual_path, invalid_files_dir_path + "/" + path)
 
     accident_ids = []
     names = []
@@ -74,22 +82,24 @@ def continue_handler():
         "LOCALIDAD/PROVINCIA": locations,
     })
 
-    df.to_excel(output_file, index=False)
+    df.to_excel(output_file, index=False, engine="openpyxl")
     success["text"] = "Success!"
     print(str(Path(output_file)))
     subprocess.call(["start", str(Path(output_file))], shell=True)
-
 
 
 root = Tk()
 root.geometry('500x300')
 current_folder = get_label_widget(current_selection_prefix)
 current_file = get_label_widget(current_selection_prefix)
-select_folder_btn = Button(root, text="Seleccionar carpeta fuente", command=set_input_dir)
-select_output = Button(root, text="Seleccionar archivo", command=set_output_file)
+select_folder_btn = Button(
+    root, text="Seleccionar carpeta fuente", command=set_input_dir)
+select_output = Button(root, text="Seleccionar archivo",
+                       command=set_output_file)
 continue_button = Button(root, text="Extraer", command=continue_handler)
 success = Label(root, fg="green")
-greeting = get_label_widget("Ingresá la carpeta con los archivos pdf y después el archivo de salida")
+greeting = get_label_widget(
+    "Ingresá la carpeta con los archivos pdf y después el archivo de salida")
 
 
 # Render elements
@@ -102,3 +112,4 @@ continue_button.pack(side=BOTTOM)
 success.pack()
 
 root.mainloop()
+
